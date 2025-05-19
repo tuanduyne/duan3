@@ -1,10 +1,227 @@
-*{
+* {
     box-sizing: border-box;
 }
-html{
+html {
     font-size: 62.5%;
 }
-body{
+:root {
+    --header-bg: #10375C;
+}
+body {
     font-size: 1.6rem;
     font-family: 'Sora', sans-serif;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*================== common============== */
+.header {
+    background-color: var(--header-bg);
+    min-height: 100vh;
+    max-width: 1440px;     
+    width: 100%;           /* Chiếm toàn bộ chiều ngang có thể */
+    margin: 0 auto;        /* Căn giữa header */
+    height: 800px;
+}
+
+.container {
+    width: 100%;           /* Chiếm toàn bộ phần tử cha là .header */
+    padding: 0 15px;     /* Padding hai bên nếu muốn */
+}
+
+
+.headertop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    position: sticky;
+    top: 0;
+    background-color: transparent;
+    z-index: 1000; /* Đảm bảo nổi lên trên */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo p {
+    color: #FFF;
+    text-align: right;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+strong {
+    color: #FFF;
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .navbar__link {
+    color: #C9D2DA;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+}
+
+.navbar__link.navbar__home {
+    color: #FFF;
+    font-weight: 400;
+    position:relative;
+    padding-left: 20px;
+}
+
+.navbar__home::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-left: -10px;
+    transform: translateY(-50%);
+    width: 8px;     /* Kích thước dấu chấm */
+    height: 8px;
+    background-color: #fff; /* Màu trắng */
+    border-radius: 50%;     /* Hình tròn */
+}
+
+
+.action {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.action .action__btn {
+    color: #C9D2DA;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+}
+
+.action .signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 104px;
+    height: 44px;
+    padding: 0 12px;
+    border-radius: 22px;
+    background: #2E80CE;
+    color: #FFF;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.8rem;
+}
+.navbar__link:hover ,.action__btn:hover{
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.headerbottom__content--left h3{
+    color: #FFF;
+    width: 517px;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 80px;
+    letter-spacing: -1.4px;
+}
+.headerbottom__content--left p{
+    width: 468px;
+    color: #C9D2DA;
+font-family: Sora;
+font-size: 18px;
+font-style: normal;
+font-weight: 300;
+line-height: 30px;
+}
+.headerbottom__content--left .btn__bookonline{
+    display: flex;
+    gap: 20px;
+
+
+}
+.headerbottom__content--left {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    margin-top: 45px;
+}
+.btn__bookonline .btn__bookonline--main{
+    width: 205px;
+    height: 60px;
+    border-radius: 30px;
+    background: #2E80CE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+text-align: center;
+font-family: Sora;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; 
+}
+.btn__bookonline{
+    display: flex;
+    align-items: center;
+}
+.btn__bookonline > a:nth-child(2){
+    color: #FFF;
+text-align: center;
+font-family: Sora;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px;
+
+}
+.headerbottom__content{
+    display: flex;
+    margin: 0 auto;
+   justify-content:center;
+}
+.headerbottom__content--right{
+    width: 545px;
+    height: 540px;
+    gap:-10px;
+    display: flex;
+}
+.headerbottom__content--right .img__headerright--big{
+    width: 330px;
+    height: 540px;
+    flex-shrink: 0;
+    border-radius: 6px;
+}
+.headerbottom__content--right .img__headerright--little{
+    width: 210px;
+    height: 410px;
+    flex-shrink: 0;
+    border-radius: 0px 6px 6px 0px;
+    margin-top: 60px;
+}
+.headerbottom .headerbottom__content{
+    margin-top: 60px;
+
+}
+.btn__bookonline--main:hover{
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
